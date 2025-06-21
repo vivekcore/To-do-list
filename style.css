@@ -1,0 +1,348 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+body{
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+ 
+   
+   
+    
+    margin: 0;
+      overflow-x: hidden;
+      /* Gradient background for depth */
+      background: linear-gradient(135deg, #000000 0%, rgb(53, 38, 41) 50%, black 100%);
+      color: #fff; /* White text for contrast */
+   
+      position: relative;
+      min-height: 100vh;
+}
+.container{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    border: solid 1px;
+    width: 50vw;
+    position: relative;
+    border-radius: 20px;
+    background-color: #050303;
+   
+}
+.heading{
+    height: 10vh;
+    font-size: 20px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+
+}
+.footer{
+    position: absolute;
+    bottom: 0px;
+    height: 15vh;
+    border-top: solid 1px;
+    width: 100%;
+    display: flex;
+   justify-content: space-between;
+    align-items: center;
+    background-color: #050303;
+    border-radius: 20px;
+    padding-left: 30px;
+    padding-right: 30px;
+   
+}
+.header{
+    border-top: solid 0.1px;
+    padding-left: 30px;
+    padding-right: 30px;
+    position: absolute;
+    top: 10vh ;
+    border-bottom: solid 1px;
+    height: 10vh;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #050303;
+    border-radius: 20px;
+}
+.tasks{
+    position: absolute;
+    /* border: solid 1px; */
+    top: 20vh;
+    height: 65vh;
+    width: 100%;
+    padding: 30px;
+   background-color: #050303;
+   overflow-y: auto;
+}
+
+/* Custom scrollbar styles for WebKit browsers */
+.tasks::-webkit-scrollbar,.wrap-input::-webkit-scrollbar {
+    width: 8px;
+    cursor: pointer;
+}
+.tasks::-webkit-scrollbar-thumb,.wrap-input::-webkit-scrollbar-thumb {
+    background: #333;
+    border-radius: 10px;
+    cursor: pointer;
+}
+.tasks::-webkit-scrollbar-track,.wrap-input::-webkit-scrollbar-track {
+    background: #050303;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.p{
+    width: 90%;
+    color: white;
+    position: relative;
+    /* margin-bottom: 20px; */
+    border-radius: 10px;
+    /* background-color: #050303; */
+    /* border: solid 1px white; */
+    padding: 10px;
+    overflow-x: hidden;
+    word-break: break-word;
+    white-space: pre-wrap;
+    overflow-wrap: break-word;
+    transition: transform 0.1s, opacity 0.1s;
+}
+
+
+.complete{
+    background-color: white;
+    min-height: 15px;
+    width: 15px;
+    border-radius: 50%;
+     box-shadow:  0 0 8px rgba(255, 255, 255, 0.5);
+    border: solid white 1px;
+    transition: transform 0.1s, opacity 0.1s;
+}
+.cmp1{
+    background-color: green  ;
+}
+.complete:hover{
+    transform: scale(1.02);
+    cursor: pointer;
+    box-shadow: none;
+}
+.complete:active{
+    transform: scale(0.9);
+}
+.taskbox{
+    background-color: #050303;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    border-radius: 10px;
+    border: 1px solid white;
+    box-shadow: 0 0 6px rgba(255, 255, 255, 0.219);
+     transition: transform 0.1s, opacity 0.1s , ease 0.1s;
+     margin-bottom: 20px;
+     justify-content: space-between;
+     padding: 5px;
+     animation: swipe 0.5s steps(10000) ;
+}
+.taskbox:hover{
+    transform: scale(1.02);
+     box-shadow: 0 0 10px color-mix(in lab, rgb(0, 255, 42) 50%, rgb(2, 0, 128) 50%);
+}
+@keyframes swipe{
+    from {translate: -600px }
+    to { translate: 0; }
+
+}
+img{
+    height: 100%;
+    width: 100%;
+    object-fit:contain;
+}
+.imgbtn{
+    border: none;
+    height: 20px;
+    display: flex;
+    overflow: hidden;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background-color: #050303; 
+    transition: transform 0.1s, opacity 0.1s;
+    
+}
+.imgbtn:hover,.Toggle:hover{
+    
+    transform: scale(1.02);
+    background-color: #050303;
+    cursor: pointer;
+}
+.imgbtn:active,.Toggle:active{
+    transform: scale(0.9);
+}
+.wrap-input {
+  font-size: large;
+  background-color: #050303;
+  color: white;
+  width: 85%; 
+  height: 14vh; 
+  resize: none;
+  overflow-x: auto; 
+  white-space: pre-wrap; /* Wraps text to the next line */
+  word-wrap: break-word; /* Breaks long words to fit within the width */
+  padding: 8px;  
+  border: solid 1px black; /* Optional: for styling */
+  border-radius: 4px; /* Optional: for styling */
+}
+.wrap-input:focus {
+  outline: none; /* Remove default browser outline (blue glow) */
+  background-color: #000000; /* Keep dark background on focus */
+  border-color: #000000; /* Optional: subtle border change on focus */
+}
+.send{
+    padding: 10px;
+    border-radius: 10px;
+    width: 80px;
+}
+ .del,.send{       
+    border-radius: 10px;
+    background-color: rgba(0, 0, 0, 0.473);
+    color: white;
+    border: solid 0.5px rgba(255, 255, 255, 0.5); 
+    box-shadow: 0 0 8px rgba(255, 255, 255, 0.3);
+    transition: transform 0.1s, opacity 0.1s;
+}
+.del:hover,.send:hover,select:hover{
+    transform: scale(1.02);
+    background-color: rgb(22, 21, 21);
+    box-shadow: none;
+    cursor: pointer;
+}
+.send:active,.del:active{
+    opacity: 0.9;
+    transform: scale(0.95);
+    box-shadow: none;
+}
+
+select{
+    background-color: #050303;
+    color: white;
+    font-family: 'Inter', sans-serif;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 0 8px rgba(255, 255, 255, 0.3);
+    transition: transform 0.1s, opacity 0.1s;
+}
+.del{
+    padding: 10px;
+    background-color: #050303;
+    width: 80px;
+}
+
+li:hover{
+    transform: scale(1.01);
+    background-color: #050303;
+    box-shadow: none;
+}
+
+.Toggle{
+    height: 30px;
+     width: 30px;
+     position: absolute;
+     background-color: #000000;
+    right: 35px;
+    border-radius: 10px;
+     display: flex;
+    overflow: hidden;
+    align-items: center;
+    justify-content: center;
+     transition: transform 0.1s, opacity 0.1s;
+     border: solid 1px;
+}
+
+
+#particles {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none; /* Prevent interaction with particles */
+      z-index: 1; /* Particles behind content */
+    }
+
+    .particle {
+      position: absolute;
+      background: rgba(255, 255, 255, 0.6); /* Slightly transparent */
+      border-radius: 50%;
+      animation: move 12s infinite linear;
+      box-shadow: 0 0 8px rgba(255, 255, 255, 0.4); /* Subtle glow */
+      opacity: 0.5; /* Lower opacity for subtlety */
+    }
+
+    /* Vary particle sizes */
+    .particle:nth-child(odd) {
+      width: 6px;
+      height: 6px;
+    }
+    .particle:nth-child(even) {
+      width: 4px;
+      height: 4px;
+    }
+
+    /* Randomize positions and delays */
+    .particle:nth-child(1) { animation-delay: 0s; left: 10%; }
+    .particle:nth-child(2) { animation-delay: 1.5s; left: 20%; }
+    .particle:nth-child(3) { animation-delay: 3s; left: 30%; }
+    .particle:nth-child(4) { animation-delay: 4.5s; left: 40%; }
+    .particle:nth-child(5) { animation-delay: 6s; left: 50%; }
+    .particle:nth-child(6) { animation-delay: 7.5s; left: 60%; }
+    .particle:nth-child(7) { animation-delay: 9s; left: 70%; }
+    .particle:nth-child(8) { animation-delay: 10.5s; left: 80%; }
+    .particle:nth-child(9) { animation-delay: 12s; left: 90%; }
+    .particle:nth-child(10) { animation-delay: 13.5s; left: 15%; }
+
+    /* Animation keyframes */
+    @keyframes move {
+      0% {
+        transform: translateY(100vh) scale(1);
+        opacity: 0.5;
+      }
+      100% {
+        transform: translateY(-10vh) scale(0.4);
+        opacity: 0;
+      }
+    }
+
+    /* Content styling */
+    .content {
+      position: relative;
+      z-index: 2; /* Content above particles */
+      max-width: 800px;
+      margin: 50px auto;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .content h1 {
+      font-size: 2.5em;
+      margin-bottom: 20px;
+    }
+
+    .content p {
+      font-size: 1.2em;
+      line-height: 1.6;
+    }
+.taskbox.fade-out {
+    opacity: 0 !important;
+    transition: opacity 0.3s ease !important;
+}
+
+
