@@ -1,5 +1,4 @@
-const textArea = document.querySelector('textarea');
-const tasks = document.querySelector('.tasks');
+
 const addBtn = document.querySelector('.send')
 const delBtn = document.querySelector('.del');
 const delList = document.querySelectorAll('li');
