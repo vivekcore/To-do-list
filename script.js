@@ -5,7 +5,7 @@ const delBtn = document.querySelector('.del');
 const delList = document.querySelectorAll('li');
 const imgbtn = document.querySelector('.imgbtn');
 const tasksContainer = document.querySelector('.tasksContainer');
-const Toggle = document.querySelector('.Toggle');
+
 
 let taskContent;
 
@@ -29,7 +29,7 @@ function addTask(){
     div2.className = 'complete';
    
     button.className = "imgbtn";
-    image.src = "bin.png";
+    image.src = "./img/bin.png"
     paragraph.className = 'p';
     
     paragraph.textContent = message;
