@@ -229,20 +229,6 @@ li:hover{
     box-shadow: none;
 }
 
-.Toggle{
-    height: 30px;
-     width: 30px;
-     position: absolute;
-     background-color: #000000;
-    right: 35px;
-    border-radius: 10px;
-     display: flex;
-    overflow: hidden;
-    align-items: center;
-    justify-content: center;
-     transition: transform 0.1s, opacity 0.1s;
-     border: solid 1px;
-}
 
 
 #particles {
@@ -295,27 +281,15 @@ li:hover{
       }
     }
 
-    .content {
-      position: relative;
-      z-index: 2; 
-      max-width: 800px;
-      margin: 50px auto;
-      padding: 20px;
-      text-align: center;
-    }
-
-    .content h1 {
-      font-size: 2.5em;
-      margin-bottom: 20px;
-    }
-
-    .content p {
-      font-size: 1.2em;
-      line-height: 1.6;
-    }
-.taskbox.fade-out {
-    opacity: 0 !important;
-    transition: opacity 0.3s ease !important;
+  @media (max-width: 600px) {
+  .container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    border: solid 1px;
+    width: 100vw;
+    position: relative;
+    border-radius: 10px;
+    background-color: #050303;
+  }
 }
-
-
