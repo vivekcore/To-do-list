@@ -286,11 +286,13 @@ li:hover{
   @media (max-width: 600px) {
     body{
         padding: 5px;
-        border:solid 1px white;
-        height: 80vh;
+       border: none;
+        height: 100svh;
         display: flex;
         justify-content: center;
         align-items: center;
+         width: 100vw;
+    max-width: 100%;
     }
     .complete{
         margin-right: 30px;
